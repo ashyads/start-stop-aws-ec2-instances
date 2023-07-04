@@ -4,6 +4,7 @@ import boto3
 # AWS credentials
 AWS_SERVER_PUBLIC_KEY = ""  # Replace with your AWS access key
 AWS_SERVER_SECRET_KEY = ""  # Replace with your AWS secret access key
+AWS_REGION = ""  # Replace with your desired AWS region
 
 # Create a session using the AWS credentials
 session = boto3.Session(
@@ -11,7 +12,7 @@ session = boto3.Session(
     aws_secret_access_key=AWS_SERVER_SECRET_KEY,
 )
 
-region = 'ap-south-1'  # Replace with your desired AWS region
+region = AWS_REGION
 
 # Create an EC2 client using the session and region
 client = session.client('ec2', region_name=region)
